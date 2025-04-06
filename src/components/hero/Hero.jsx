@@ -6,7 +6,7 @@ const Hero = () => {
     <section className='bg-[#F26522] h-[742px] relative'>
       <div className='container mx-auto'>
         <div className='absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] text-white'>
-          <h2 className='text-[60px] font-bold max-w-[1000px] mx-auto whitespace-nowrap mb-6'>
+          <h2 className='text-[60px] font-bold max-w-[1000px] mx-auto whitespace-nowrap mb-4'>
             Sayohatingizni biz bilan boshlang
           </h2>
           <p className='mb-12 text-2xl font-normal text-center'>Nemo Travel - huzur uchun yo'l</p>
@@ -15,7 +15,6 @@ const Hero = () => {
             <div className="w-[809px] h-[108px] bg-white rounded-[55px] shadow-md">
               <div className="flex items-center justify-center h-full">
                 <div className="flex gap-[44px]">
-                  {/* Clients */}
                   <div className="flex items-center gap-3">
                     <div className="text-white bg-[#F26522] p-2 rounded-[50%] text-2xl">
                       <FaUsers />
@@ -26,7 +25,6 @@ const Hero = () => {
                     </div>
                   </div>
 
-                  {/* Countries */}
                   <div className="flex items-center gap-3">
                     <div className="text-white bg-[#F26522] p-2 rounded-[50%] text-2xl">
                       <FaGlobe />

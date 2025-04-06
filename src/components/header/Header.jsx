@@ -44,7 +44,7 @@ const Header = () => {
                         <img src={logo} alt="logo" className='h-full object-contain' />
                     </div>
 
-                    <ul className='flex items-center gap-5'>
+                    <ul className='flex items-center gap-7 text-[14px] font-medium'>
                         <li><a href="#"><span>Asosiy</span></a></li>
                         <li><a href="#"><span>Biz haqimizda</span></a></li>
                         <li><a href="#"><span>Turlar</span></a></li>
