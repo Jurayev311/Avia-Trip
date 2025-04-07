@@ -19,13 +19,13 @@ const Support = () => {
         const phone = document.getElementById("phone").value
         const title = document.getElementById("title").value
         const message = document.getElementById("message").value
-        
+
         const text = `
-        Ism: ${name}
-        email: ${email}
-        Tel: ${phone}
-        Nomi: ${title}
-        Xabar: ${message}
+Ism: ${name}
+email: ${email}
+Tel: ${phone}
+Nomi: ${title}
+Xabar: ${message}
         `
 
         axios({
@@ -36,22 +36,22 @@ const Support = () => {
                 'text': text
             }
         })
-        .then((res) => {
-            document.getElementById('support-form').reset()
-            toast.success("Xabaringiz yuborildi!")
-        })
-        .catch((error) => {
-            console.log(error)
-            toast.error("Xatolik yuz berdi. Iltimos, qayta urinib ko‘ring.")
-        })
-        .finally(() => setLoading(false))
+            .then((res) => {
+                document.getElementById('support-form').reset()
+                toast.success("Xabaringiz yuborildi!")
+            })
+            .catch((error) => {
+                console.log(error)
+                toast.error("Xatolik yuz berdi. Iltimos, qayta urinib ko‘ring.")
+            })
+            .finally(() => setLoading(false))
 
     }
 
     return (
         <section className='bg-[#f3f4f6] py-12'>
             <div className='container mx-auto px-4'>
-            <Toaster position="top-center" />
+                <Toaster position="top-center" />
                 <div className='text-center mb-12'>
                     <h2 className='text-3xl font-bold mb-4'>Biz bilan bog'lanish</h2>
                     <p className='text-xl text-[#4B5563]'>Savollaringiz bormi? Biz sizga yordam berishdan xursandmiz</p>
@@ -61,13 +61,13 @@ const Support = () => {
                     <div className='bg-white p-6 rounded-xl shadow-md'>
                         <form onSubmit={SendMessage} id='support-form' className='space-y-4'>
                             <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Ismingiz</label></div>
-                            <input id='name' type='text' placeholder='Ismingiz' className='w-full p-3 border border-gray-300 rounded' required/>
+                            <input id='name' type='text' placeholder='Ismingiz' className='w-full p-3 border border-gray-300 rounded' required />
                             <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Email manzilingiz</label></div>
-                            <input id='email' type='email' placeholder='Email manzilingiz' className='w-full p-3 border border-gray-300 rounded' required/>
+                            <input id='email' type='email' placeholder='Email manzilingiz' className='w-full p-3 border border-gray-300 rounded' required />
                             <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Telefon raqamingiz</label></div>
-                            <input id='phone' type='tel' placeholder='Telefon raqamingiz' className='w-full p-3 border border-gray-300 rounded' required/>
+                            <input id='phone' type='tel' placeholder='Telefon raqamingiz' className='w-full p-3 border border-gray-300 rounded' required />
                             <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Mavzu</label></div>
-                            <input id='title' type='text' placeholder='Mavzu' className='w-full p-3 border border-gray-300 rounded' required/>
+                            <input id='title' type='text' placeholder='Mavzu' className='w-full p-3 border border-gray-300 rounded' required />
                             <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Xabaringiz</label></div>
                             <textarea id='message' placeholder='Xabaringiz' rows='5' className='w-full resize-none p-3 border border-gray-300 rounded' required></textarea>
                             <button disabled={loading} type='submit' className={`w-full bg-[#2C2C2C] hover:bg-[#262626] cursor-pointer active:scale-95 duration-300 text-white py-2.5 rounded font-semibold ${loading ? 'opacity-80' : ''}`}>
