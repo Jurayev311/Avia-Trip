@@ -13,7 +13,7 @@ const SpeciesCard = [
 
 const Species = () => {
   return (
-    <section>
+    <section id='species'>
         <div className='container mx-auto'>
             <div className='mt-16 text-center'>
                 <h2 className='text-3xl font-bold mb-4'>Turlar</h2>
@@ -28,7 +28,7 @@ const Species = () => {
                             <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
                             <p className="text-gray-600 text-sm mb-4">{card.paragraph}</p>
                             <button className="px-4 py-1.5 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition">
-                                Batafsil
+                                <a href="#support">Batafsil</a>
                             </button>
                         </div>
                     </div>

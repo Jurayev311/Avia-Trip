@@ -49,7 +49,7 @@ Xabar: ${message}
     }
 
     return (
-        <section className='bg-[#f3f4f6] py-12'>
+        <section id='support' className='bg-[#f3f4f6] py-12'>
             <div className='container mx-auto px-4'>
                 <Toaster position="top-center" />
                 <div className='text-center mb-12'>

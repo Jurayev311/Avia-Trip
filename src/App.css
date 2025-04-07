@@ -4,3 +4,8 @@
     margin: 0 auto;
     padding: 0 16px;
 }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 95px
+  }

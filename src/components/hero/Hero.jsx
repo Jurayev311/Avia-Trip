@@ -3,7 +3,7 @@ import { FaUsers, FaGlobe, FaClock} from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <section className='bg-[#F26522] h-[742px] relative'>
+    <section id='main' className='bg-[#F26522] h-[742px] relative'>
       <div className='container mx-auto'>
         <div className='absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] text-white'>
           <h2 className='text-[60px] font-bold max-w-[1000px] mx-auto whitespace-nowrap mb-4'>
@@ -46,7 +46,7 @@ const Hero = () => {
                   </div>
 
                   <div className="flex items-center gap-3">
-                      <button className="text-white text-md rounded-3xl cursor-pointer py-[8px] px-6 bg-[#F26522] hover:bg-[#E85A1F]">Batafsil malumot</button>
+                      <button className="text-white text-md rounded-3xl cursor-pointer py-[8px] px-6 bg-[#F26522] hover:bg-[#E85A1F]"><a href="#support">Batafsil malumot</a></button>
                   </div>
                 </div>
               </div>

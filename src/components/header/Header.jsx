@@ -59,12 +59,12 @@ const Header = () => {
                     </div>
 
                     <ul className='flex items-center gap-7 text-[14px] font-medium'>
-                        <li><a href="#"><span>Asosiy</span></a></li>
-                        <li><a href="#"><span>Biz haqimizda</span></a></li>
-                        <li><a href="#"><span>Turlar</span></a></li>
-                        <li><a href="#"><span>Mehmonxonalar</span></a></li>
-                        <li><a href="#"><span>Aviachiptalar</span></a></li>
-                        <li><a href="#"><span>Aloqa</span></a></li>
+                        <li><a href="#main"><span>Asosiy</span></a></li>
+                        <li><a href="#about"><span>Biz haqimizda</span></a></li>
+                        <li><a href="#species"><span>Turlar</span></a></li>
+                        <li><a href="#hotels"><span>Mehmonxonalar</span></a></li>
+                        <li><a href="#tickets"><span>Aviachiptalar</span></a></li>
+                        <li><a href="#support"><span>Aloqa</span></a></li>
                     </ul>
 
                     <div className='relative' ref={dropdownRef}>

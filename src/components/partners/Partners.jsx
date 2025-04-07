@@ -17,12 +17,12 @@ const partners = [
   { image: partners3, name: 'Emirates' },
   { image: partners4, name: 'Qatar Airways' },
   { image: partners5, name: 'Uzairways' },
-  { image: partners6, name: 'Centrum Air' }, // Yoki boshqa logo bo‘lsa o‘zgartiring
+  { image: partners6, name: 'Centrum Air' },
 ];
 
 const Partners = () => {
   return (
-    <section className="py-10 bg-gray-50">
+    <section className="py-10 mt-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-800">Hamkorlarimiz</h2>

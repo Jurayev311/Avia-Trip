@@ -5,7 +5,7 @@ import about3 from '../../assets/about3.png'
 
 const About = () => {
     return (
-        <section>
+        <section id='about'>
             <div className='container mx-auto'>
                 <div className='text-center mt-8'>
                     <h2 className='text-4xl font-bold mb-6'>Biz haqimizda</h2>
