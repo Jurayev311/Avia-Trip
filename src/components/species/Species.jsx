@@ -27,7 +27,7 @@ const Species = () => {
                         <div className="p-4">
                             <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
                             <p className="text-gray-600 text-sm mb-4">{card.paragraph}</p>
-                            <button className="px-4 py-2 w-full bg-orange-500 text-white rounded-3xl hover:bg-orange-600 transition">
+                            <button className="px-4 py-1.5 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition">
                                 Batafsil
                             </button>
                         </div>

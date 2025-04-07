@@ -6,6 +6,7 @@ import About from './components/about/About'
 import OurTeam from './components/ourTeam/OurTeam'
 import Species from './components/species/Species'
 import Partners from './components/partners/Partners'
+import Support from './components/support/Support'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <OurTeam />
       <Species />
       <Partners />
+      <Support />
     </>
   )
 }
