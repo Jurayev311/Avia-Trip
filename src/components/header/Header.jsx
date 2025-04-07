@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import logo from '../../assets/logo.png';
+import logo2 from '../../assets/logo2.png';
 import uz from '../../assets/uz.png';
 import en from '../../assets/en.png';
 import ru from '../../assets/ru.png';
@@ -8,6 +9,7 @@ import { FaChevronDown } from 'react-icons/fa';
 const Header = () => {
     const [selectedLang, setSelectedLang] = useState('uz');
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const dropdownRef = useRef(null);
 
     const languages = [
@@ -30,18 +32,30 @@ const Header = () => {
         };
 
         document.addEventListener('mousedown', handleClickOutside);
+
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
     return (
-        <header className='fixed top-0 left-0 w-full bg-[#F26522] z-50'>
+        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white text-black' : 'bg-[#F26522] text-white'}`}>
             <div className='container mx-auto'>
-                <nav className='flex items-center justify-between h-[64px] text-white'>
+                <nav className='flex items-center justify-between h-[64px]'>
 
                     <div className='w-[120px] h-[40px]'>
-                        <img src={logo} alt="logo" className='h-full object-contain' />
+                        <img src={scrolled ? logo2 : logo} alt="logo" className='h-full object-contain' />
                     </div>
 
                     <ul className='flex items-center gap-7 text-[14px] font-medium'>
@@ -56,7 +70,7 @@ const Header = () => {
                     <div className='relative' ref={dropdownRef}>
                         <button
                             onClick={toggleDropdown}
-                            className='flex items-center gap-2 bg-transparent text-white px-4 py-2 rounded-md'
+                            className={`flex items-center gap-2 bg-transparent px-4 py-2 rounded-md ${scrolled ? 'text-black' : 'text-white'}`}
                         >
                             <span className='font-medium'>{selectedLang.toUpperCase()}</span>
                             <FaChevronDown className={`w-3 h-3 mt-1 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
