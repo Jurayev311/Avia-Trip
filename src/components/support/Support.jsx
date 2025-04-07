@@ -65,7 +65,7 @@ Xabar: ${message}
                             <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Email manzilingiz</label></div>
                             <input id='email' type='email' placeholder='Email manzilingiz' className='w-full p-3 border border-gray-300 rounded' required />
                             <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Telefon raqamingiz</label></div>
-                            <input id='phone' type='tel' placeholder='Telefon raqamingiz' className='w-full p-3 border border-gray-300 rounded' required />
+                            <input id="phone" type="number" placeholder="Telefon raqamingiz" className="w-full p-3 border border-gray-300 rounded" required />
                             <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Mavzu</label></div>
                             <input id='title' type='text' placeholder='Mavzu' className='w-full p-3 border border-gray-300 rounded' required />
                             <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Xabaringiz</label></div>
