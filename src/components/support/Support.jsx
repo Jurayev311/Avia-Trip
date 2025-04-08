@@ -1,24 +1,25 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import { useTranslation } from 'react-i18next'; 
 
 const Support = () => {
-
+    const { t } = useTranslation();
     const [loading, setLoading] = useState(false);
 
     const SendMessage = (e) => {
-        e.preventDefault()
-        setLoading(true)
+        e.preventDefault();
+        setLoading(true);
 
-        const token = "7749972902:AAH1K7jxCUEhh1ZLNSn-nDx4pgJLckawIxk"
-        const chat_id = 6324560189
-        const url = `https://api.telegram.org/bot${token}/SendMessage`
+        const token = "7749972902:AAH1K7jxCUEhh1ZLNSn-nDx4pgJLckawIxk";
+        const chat_id = 6324560189;
+        const url = `https://api.telegram.org/bot${token}/SendMessage`;
 
-        const name = document.getElementById("name").value
-        const email = document.getElementById("email").value
-        const phone = document.getElementById("phone").value
-        const title = document.getElementById("title").value
-        const message = document.getElementById("message").value
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const title = document.getElementById("title").value;
+        const message = document.getElementById("message").value;
 
         const text = `
 Ism: ${name}
@@ -26,7 +27,7 @@ email: ${email}
 Tel: ${phone}
 Nomi: ${title}
 Xabar: ${message}
-        `
+        `;
 
         axios({
             url: url,
@@ -37,42 +38,41 @@ Xabar: ${message}
             }
         })
             .then((res) => {
-                document.getElementById('support-form').reset()
-                toast.success("Xabaringiz yuborildi!")
+                document.getElementById('support-form').reset();
+                toast.success(t('successMessage')); 
             })
             .catch((error) => {
-                console.log(error)
-                toast.error("Xatolik yuz berdi. Iltimos, qayta urinib ko‘ring.")
+                console.log(error);
+                toast.error(t('errorMessage')); 
             })
-            .finally(() => setLoading(false))
-
-    }
+            .finally(() => setLoading(false));
+    };
 
     return (
         <section id='support' className='bg-[#f3f4f6] py-12'>
             <div className='container mx-auto px-4'>
                 <Toaster position="top-center" />
                 <div className='text-center mb-12'>
-                    <h2 className='text-3xl font-bold mb-4'>Biz bilan bog'lanish</h2>
-                    <p className='text-xl text-[#4B5563]'>Savollaringiz bormi? Biz sizga yordam berishdan xursandmiz</p>
+                    <h2 className='text-3xl font-bold mb-4'>{t('supportTitle')}</h2>
+                    <p className='text-xl text-[#4B5563]'>{t('supportSubtitle')}</p>
                 </div>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                     <div className='bg-white p-6 rounded-xl shadow-md'>
                         <form onSubmit={SendMessage} id='support-form' className='space-y-4'>
-                            <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Ismingiz</label></div>
-                            <input id='name' type='text' placeholder='Ismingiz' className='w-full p-3 border border-gray-300 rounded' required />
-                            <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Email manzilingiz</label></div>
-                            <input id='email' type='email' placeholder='Email manzilingiz' className='w-full p-3 border border-gray-300 rounded' required />
-                            <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Telefon raqamingiz</label></div>
-                            <input id="phone" type="number" placeholder="Telefon raqamingiz" className="w-full p-3 border border-gray-300 rounded" required />
-                            <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Mavzu</label></div>
-                            <input id='title' type='text' placeholder='Mavzu' className='w-full p-3 border border-gray-300 rounded' required />
-                            <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">Xabaringiz</label></div>
-                            <textarea id='message' placeholder='Xabaringiz' rows='5' className='w-full resize-none p-3 border border-gray-300 rounded' required></textarea>
+                            <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">{t('name')}</label></div>
+                            <input id='name' type='text' placeholder={t('name')} className='w-full p-3 border border-gray-300 rounded' required />
+                            <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">{t('email')}</label></div>
+                            <input id='email' type='email' placeholder={t('email')} className='w-full p-3 border border-gray-300 rounded' required />
+                            <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">{t('phone')}</label></div>
+                            <input id="phone" type="number" placeholder={t('phone')} className="w-full p-3 border border-gray-300 rounded" required />
+                            <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">{t('title')}</label></div>
+                            <input id='title' type='text' placeholder={t('title')} className='w-full p-3 border border-gray-300 rounded' required />
+                            <div className='mb-2 text-[#4B5563] font-medium'><label htmlFor="">{t('message')}</label></div>
+                            <textarea id='message' placeholder={t('message')} rows='5' className='w-full resize-none p-3 border border-gray-300 rounded' required></textarea>
                             <button disabled={loading} type='submit' className={`w-full bg-[#2C2C2C] hover:bg-[#262626] cursor-pointer active:scale-95 duration-300 text-white py-2.5 rounded font-semibold ${loading ? 'opacity-80' : ''}`}>
                                 {
-                                    loading ? 'Yuborilmoqda...' : "Yuborish"
+                                    loading ? t('sendingMessage') : t('sendMessage')
                                 }
                             </button>
                         </form>
@@ -80,7 +80,7 @@ Xabar: ${message}
 
                     <div className='space-y-6'>
                         <div className='bg-white p-6 rounded-xl shadow-md leading-8'>
-                            <h3 className='text-xl font-semibold mb-4'>Aloqa ma'lumotlari</h3>
+                            <h3 className='text-xl font-semibold mb-4'>{t('contactInfo')}</h3>
                             <p className='text-[#4B5563]'><strong className='font-medium text-[#4B5563]'>Manzil:</strong> Toshkent shahri, Muqimiy ko'chasi 44-A uy</p>
                             <p className='text-[#4B5563]'><strong className='font-medium text-[#4B5563]'>Tel:</strong> +998 95 150 00 00</p>
                             <p className='text-[#4B5563]'><strong className='font-medium text-[#4B5563]'>Email:</strong> info@nemoavia.uz</p>

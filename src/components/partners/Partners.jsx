@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, FreeMode } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
+import { useTranslation } from 'react-i18next';
 
 import partners1 from '../../assets/partners1.png';
 import partners2 from '../../assets/partners2.png';
@@ -21,11 +22,13 @@ const partners = [
 ];
 
 const Partners = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-10 mt-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-800">Hamkorlarimiz</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">{t('partnersTitle')}</h2>
         </div>
 
         <Swiper
@@ -40,9 +43,10 @@ const Partners = () => {
             disableOnInteraction: false,
           }}
           breakpoints={{
-            320: { slidesPerView: 2 },
-            640: { slidesPerView: 3 },
-            1024: { slidesPerView: 5 },
+            320: { slidesPerView: 1, spaceBetween: 10 },
+            480: { slidesPerView: 2, spaceBetween: 15 },
+            768: { slidesPerView: 3, spaceBetween: 20 }, 
+            1024: { slidesPerView: 5, spaceBetween: 30 }, 
           }}
         >
           {partners.concat(partners).map((partner, index) => (
@@ -51,9 +55,11 @@ const Partners = () => {
                 <img
                   src={partner.image}
                   alt={partner.name}
-                  className="max-h-24 object-contain mb-2 rounded-xl"
+                  className="w-full h-24 object-contain mb-2 rounded-xl"
                 />
-                <p className="text-sm font-medium text-gray-700">{partner.name}</p>
+                <p className="text-xs md:text-sm font-medium text-gray-700 text-center line-clamp-1">
+                  {t(partner.name)}
+                </p>
               </div>
             </SwiperSlide>
           ))}
