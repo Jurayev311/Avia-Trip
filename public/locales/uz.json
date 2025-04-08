@@ -84,6 +84,12 @@
   "tel": "Phone",
   "socialMedia": "Social Media",
   "location": "Location",
-  "allRightsReserved": "All rights reserved"
+  "allRightsReserved": "All rights reserved",
+    "team": {
+      "director": "Direktor",
+      "lawyer": "Yurist",
+      "operator": "Operator",
+      "administrator": "Administrator"
+    }
   }
   

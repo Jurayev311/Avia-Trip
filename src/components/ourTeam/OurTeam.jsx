@@ -25,7 +25,7 @@ const OurTeam = () => {
                             className="w-full max-w-[224px] h-[120px] shadow-[0_8px_30px_rgba(255,92,0,0.3)] rounded-xl flex items-center justify-center hover:shadow-[0_8px_30px_rgba(255,92,0,0.5)] cursor-default duration-200 bg-white"
                         >
                             <h2 className="text-xl font-semibold text-black text-center">
-                                {t(`team.${item.name}`)}
+                                {t(`team.${item.name}`)} {/* Tarjimalar uchun kalitni to'g'ri chaqirish */}
                             </h2>
                         </div>
                     ))}
