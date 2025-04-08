@@ -51,7 +51,7 @@ const Partners = () => {
         >
           {partners.concat(partners).map((partner, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white rounded-xl p-4 flex flex-col items-center justify-center h-36">
+              <div className="bg-white rounded-xl p-4 flex flex-col items-center justify-center h-44">
                 <img
                   src={partner.image}
                   alt={partner.name}
